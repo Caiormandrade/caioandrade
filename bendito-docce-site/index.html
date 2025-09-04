@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bendito Docce - Brigadeiros Gourmet</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <img src="logo.jpeg" alt="Logo Bendito Docce" class="logo">
+                <div class="logo-text">
+                    <h1>Bendito Docce</h1>
+                    <p>Brigadeiros finos para deixar sua festa ainda mais especial</p>
+                </div>
+            </div>
+            
+            <!-- Carrinho de Compras -->
+            <div class="cart-section">
+                <button class="cart-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegação -->
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Início</a></li>
+                <li><a href="#produtos" class="nav-link">Produtos</a></li>
+                <li><a href="#novos-produtos" class="nav-link">Novidades</a></li>
+                <li><a href="#galeria" class="nav-link">Galeria</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
+                <li><a href="#admin" class="nav-link admin-link">Admin</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carrinho Lateral -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Carrinho de Compras</h3>
+            <button class="close-cart" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Seu carrinho está vazio</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: R$ <span id="cartTotal">0,00</span></strong>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">
+                <i class="fab fa-whatsapp"></i>
+                Finalizar Pedido
+            </button>
+        </div>
+    </div>
+
+    <!-- Overlay do Carrinho -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <main>
+        <!-- Seção Home -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Brigadeiros Artesanais</h2>
+                    <p>Feitos com amor e ingredientes selecionados para tornar seus momentos especiais ainda mais doces</p>
+                    <a href="#produtos" class="cta-btn">Ver Produtos</a>
+                </div>
+                <div class="hero-image">
+                    <img src="img1.jpeg" alt="Brigadeiros Gourmet">
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Produtos -->
+        <section id="produtos" class="products">
+            <div class="container">
+                <h2>Nossos Brigadeiros</h2>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Produtos serão carregados dinamicamente -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Novos Produtos -->
+        <section id="novos-produtos" class="new-products">
+            <div class="container">
+                <h2>Novidades</h2>
+                <p>Confira nossos lançamentos e sabores especiais</p>
+                <div class="products-grid" id="newProductsGrid">
+                    <!-- Novos produtos serão carregados dinamicamente -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Galeria -->
+        <section id="galeria" class="gallery">
+            <div class="container">
+                <h2>Galeria de Delícias</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="img1.jpeg" alt="Brigadeiros gourmet">
+                        <div class="gallery-overlay">
+                            <h3>Brigadeiros Gourmet</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img2.jpeg" alt="Brigadeiros decorados">
+                        <div class="gallery-overlay">
+                            <h3>Brigadeiros Decorados</h3>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img3.jpeg" alt="Caixa de brigadeiros">
+                        <div class="gallery-overlay">
+                            <h3>Embalagens Especiais</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Contato -->
+        <section id="contato" class="contact">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Endereço</h3>
+                                <p>Avenida Manoel Augusto da Silva, 315<br>Varginha, MG</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h3>WhatsApp</h3>
+                                <p>(35) 98408-9245</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-instagram"></i>
+                            <div>
+                                <h3>Instagram</h3>
+                                <p>@Bendito_Docce</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3695.8!2d-45.4!3d-21.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDMwJzAwLjAiUyA0NcKwMjQnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Admin (Oculta) -->
+        <section id="admin" class="admin-section" style="display: none;">
+            <div class="container">
+                <h2>Painel Administrativo</h2>
+                <div class="admin-content">
+                    <div class="admin-form">
+                        <h3>Adicionar Novo Produto</h3>
+                        <form id="addProductForm">
+                            <div class="form-group">
+                                <label for="productName">Nome do Produto:</label>
+                                <input type="text" id="productName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="productPrice">Preço (R$):</label>
+                                <input type="number" id="productPrice" step="0.01" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="productDescription">Descrição:</label>
+                                <textarea id="productDescription" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="productImage">URL da Imagem:</label>
+                                <input type="url" id="productImage">
+                            </div>
+                            <div class="form-group">
+                                <label for="productCategory">Categoria:</label>
+                                <select id="productCategory">
+                                    <option value="tradicional">Tradicional</option>
+                                    <option value="gourmet">Gourmet</option>
+                                    <option value="novo">Novidade</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="admin-btn">Adicionar Produto</button>
+                        </form>
+                    </div>
+                    <div class="admin-products">
+                        <h3>Produtos Cadastrados</h3>
+                        <div id="adminProductsList">
+                            <!-- Lista de produtos para administração -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="logo.jpeg" alt="Logo Bendito Docce" class="footer-logo">
+                    <p>Obrigado por valorizar o pequeno empreendimento de grandes sonhadores</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-phone"></i> (35) 98408-9245</p>
+                    <p><i class="fab fa-instagram"></i> @Bendito_Docce</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Horário de Funcionamento</h3>
+                    <p>Segunda a Sexta: 8h às 18h</p>
+                    <p>Sábado: 8h às 14h</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bendito Docce - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
+
